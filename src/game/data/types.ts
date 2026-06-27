@@ -88,6 +88,18 @@ export type Ending = {
   tone: string;
 };
 
+export type S3HubAction = {
+  day: number;
+  action_id: string;
+  label_vi: string;
+  opens_scene: string;
+  gate_flag: string | null;
+  pick_count: number;
+  actions_total: number;
+  reward: string;
+  risk: string | null;
+};
+
 export type RuntimeConfig = {
   title: string;
   values: Record<string, string | number | boolean | null>;
@@ -100,5 +112,6 @@ export type GameContent = {
   documents: DocumentRow[];
   tactics: Tactic[];
   endings: Ending[];
+  s3Hubs: S3HubAction[];
   runtimeConfig: RuntimeConfig;
 };

@@ -61,8 +61,12 @@ export class PortraitScene extends Phaser.Scene {
     this.drawTopHud(theme);
     this.drawSceneSubjects();
     this.drawEvidenceRail();
-    this.drawDialoguePanel();
-    this.drawChoicePanel();
+    if (this.model.isHub()) {
+      this.drawHubPanel();
+    } else {
+      this.drawDialoguePanel();
+      this.drawChoicePanel();
+    }
     this.drawDebugPanel();
     this.drawDocumentModal();
   }
@@ -291,6 +295,81 @@ export class PortraitScene extends Phaser.Scene {
         wordWrap: { width: 880 },
       }));
     });
+  }
+
+  private drawHubPanel(): void {
+    const beat = this.model.currentBeat();
+    const actions = this.model.currentHubActionStates();
+    const y = 1254;
+    const panel = this.add.graphics();
+    panel.fillStyle(0x07191d, 0.91);
+    panel.fillRoundedRect(46, y, 988, 652, 30);
+    panel.lineStyle(4, COLORS.gold, 0.78);
+    panel.strokeRoundedRect(46, y, 988, 652, 30);
+    this.view.add(panel);
+
+    this.view.add(this.add.text(86, y + 34, "Kế hoạch trong ngày", {
+      fontFamily: "Arial",
+      fontSize: "34px",
+      color: "#fff2cf",
+      fontStyle: "bold",
+    }));
+    this.view.add(this.add.text(86, y + 86, beat.text_vi, {
+      fontFamily: "Arial",
+      fontSize: "29px",
+      color: "#f6ead2",
+      wordWrap: { width: 908 },
+    }));
+
+    actions.forEach((entry, index) => {
+      const bx = 78;
+      const by = y + 154 + index * 116;
+      const enabled = entry.enabled;
+      const selected = entry.selected;
+      const g = this.add.graphics();
+      g.fillStyle(selected ? 0x536b62 : enabled ? COLORS.paper : 0x4f5654, enabled ? 0.96 : 0.76);
+      g.fillRoundedRect(bx, by, 924, 96, 24);
+      g.lineStyle(4, selected ? COLORS.jade : enabled ? COLORS.gold : 0x777777, selected ? 0.9 : 0.68);
+      g.strokeRoundedRect(bx, by, 924, 96, 24);
+      const hit = this.add.zone(bx, by, 924, 96).setOrigin(0).setInteractive({ useHandCursor: enabled });
+      hit.on("pointerup", () => this.chooseHubAction(entry.action.action_id, enabled));
+      this.view.add(g);
+      this.view.add(hit);
+
+      const status = selected ? "Đã chọn" : enabled ? "Có thể chọn" : entry.lockedReason ?? "Đang khóa";
+      this.view.add(this.add.text(bx + 28, by + 16, entry.action.label_vi, {
+        fontFamily: "Arial",
+        fontSize: "27px",
+        color: enabled ? "#142225" : "#f4e2bd",
+        fontStyle: "bold",
+        wordWrap: { width: 520 },
+      }));
+      this.view.add(this.add.text(bx + 730, by + 18, status, {
+        fontFamily: "Arial",
+        fontSize: "20px",
+        color: enabled ? "#6d3d25" : "#f4c66e",
+        align: "right",
+        wordWrap: { width: 170 },
+      }));
+      this.view.add(this.add.text(bx + 28, by + 54, entry.action.reward, {
+        fontFamily: "Arial",
+        fontSize: "18px",
+        color: enabled ? "#233034" : "#ded0af",
+        wordWrap: { width: 820 },
+      }));
+    });
+  }
+
+  private chooseHubAction(actionId: string, enabled: boolean): void {
+    if (!enabled) {
+      this.playSound("sfx_warning");
+      this.flash(COLORS.red);
+      return;
+    }
+    const started = this.model.startHubAction(actionId);
+    this.playSound(started ? "sfx_reveal" : "sfx_warning");
+    this.flash(started ? COLORS.jade : COLORS.red);
+    this.renderCurrentBeat();
   }
 
   private methodLabel(method: string): string {

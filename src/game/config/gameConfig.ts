@@ -38,7 +38,7 @@ export const DEBUG_JUMPS = [
   { label: "S1 lựa chọn", beatId: "S1C1_CHO" },
   { label: "S2 tư vấn", beatId: "S2A_A1" },
   { label: "CS2 về nhà", beatId: "cs2_1" },
-  { label: "S3 ngày 1", beatId: "d1n1" },
+  { label: "S3 ngày 1", beatId: "HUB_D1" },
   { label: "S3 sao kê", beatId: "d2s1" },
   { label: "S3 cuối", beatId: "d3x1" },
   { label: "Ending", beatId: "ENDING" },

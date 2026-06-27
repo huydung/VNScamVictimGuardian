@@ -98,6 +98,43 @@ function localizeRows(sheetName, rows) {
       method: methodLabels[row.method] ?? row.method,
     }));
   }
+  if (sheetName === "S3_Hubs") {
+    const copy = {
+      d1_nghe: {
+        reward: "Hiểu cách kẻ lừa đảo xây lòng tin qua chuyện gia đình, nỗi buồn, sức khoẻ và vận hạn.",
+        risk: "Phán xét quá sớm khiến mẹ giấu thêm.",
+      },
+      d1_phone: {
+        reward: "Thấy lời dặn giữ bí mật, tin nhắn hỏi han và hạn giờ chuyển tiền.",
+        risk: "Ép xem điện thoại làm giảm Tình thân.",
+      },
+      d1_aunt: {
+        reward: "Tạo đồng minh gia đình biết lắng nghe trước khi đối chất.",
+        risk: "Nếu biến thành mắng mỏ, mẹ thấy mình bị bao vây.",
+      },
+      d2_temple: {
+        reward: "Dùng đúng ngôn ngữ tâm linh để phản biện kẻ lợi dụng niềm tin.",
+        risk: "Chỉ mở khi mẹ đã chịu kể và còn đủ tin con.",
+      },
+      d2_aunt2: {
+        reward: "Dì Tư thay thế vai trò cảm xúc mà kẻ lừa đảo đang chiếm.",
+        risk: "Áp lực gia đình quá mạnh có thể thành buộc tội.",
+      },
+      d2_report: {
+        reward: "Giữ bằng chứng, bảo vệ tiền, và chuẩn bị báo công an.",
+        risk: "Làm sau lưng mẹ có thể khiến mẹ mất cảm giác tự chủ.",
+      },
+      d2_saoke: {
+        reward: "Cho mẹ thấy bậc thang cam kết: khoản nhỏ dẫn tới khoản lớn.",
+        risk: "Nếu nói như kết tội, bằng chứng biến thành xấu hổ.",
+      },
+    };
+    return rows.map((row) => ({
+      ...row,
+      reward: copy[row.action_id]?.reward ?? row.reward,
+      risk: copy[row.action_id]?.risk ?? row.risk,
+    }));
+  }
   return rows;
 }
 

@@ -44,6 +44,7 @@ The browser game reads the JSON files, not the workbook directly. This keeps gam
 - `Documents`: evidence card copy and tells.
 - `Tactics`: guidebook/tactic metadata.
 - `Endings`: ending metadata.
+- `S3_Hubs`: Stage 3 day-planning actions, unlock gates, rewards, and risks.
 - `Config`: exported to `runtimeConfig.json`; currently also mirrored by code config for renderer constants.
 - `AssetRefs`: checklist of art/audio/data asset IDs expected by the content.
 
