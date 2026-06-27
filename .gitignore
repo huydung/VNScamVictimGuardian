@@ -1,0 +1,9 @@
+.DS_Store
+.codex_tmp/
+node_modules/
+dist/
+.env
+.env.*
+*.log
+*.inspect.ndjson
+outputs/**/verification.txt
