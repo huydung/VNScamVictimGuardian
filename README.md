@@ -59,6 +59,7 @@ Useful knobs:
 
 - `GAME_SIZE`: internal canvas size.
 - `GAME_TUNING`: first beat, meter defaults, text speed, button sizes, particle count, VFX timing.
+- `DEBUG_JUMPS`: in-game QA menu jump targets for fast stage testing.
 - `STAGE_THEMES`: stage label, mood line, background fallback, accent colors.
 - `UI_COPY`: reusable Vietnamese UI labels.
 
@@ -67,6 +68,16 @@ Data-level tuning lives in the Excel `Config` sheet and is exported by:
 ```bash
 npm run export:data
 ```
+
+## Testing The Game Flow
+
+The `QA` button in the top-right corner opens a small stage-jump menu. It is meant for development and stakeholder review:
+
+- Jump to S0, S1, S2, CS2, Stage 3 moments, or Ending.
+- Use it to inspect mood, layout, evidence, and choice fit without replaying the whole game.
+- Edit jump targets in `DEBUG_JUMPS` inside `src/game/config/gameConfig.ts`.
+
+Evidence cards can be tapped during document and choice beats. The expanded view shows the Excel-authored `fields_summary`, `tell_desc`, and tactic ID, so writers can tune evidence language directly in the `Documents` sheet.
 
 ## Artwork And Sound
 

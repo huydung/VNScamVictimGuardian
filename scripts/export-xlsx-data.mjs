@@ -79,8 +79,24 @@ function localizeRows(sheetName, rows) {
       if (row.char_id === "system") return { ...row, name_vi: "Hệ thống", function: "Thông báo hệ thống và chuyển cảnh." };
       if (row.char_id === "narrator") return { ...row, name_vi: "Người kể", function: "Dẫn cảnh, không có chân dung." };
       if (row.char_id === "guidebook") return { ...row, name_vi: "Cẩm nang", function: "Lớp phủ cẩm nang 8 chiêu." };
+      if (row.char_id === "me") return { ...row, name_vi: "Mẹ", function: "Nhân vật trung tâm của Stage 3; biểu cảm là chỉ dấu cảm xúc." };
+      if (row.char_id === "di_tu") return { ...row, name_vi: "Dì Tư", function: "Đồng minh gia đình trong Stage 3." };
+      if (row.char_id === "su_thay") return { ...row, name_vi: "Sư thầy", function: "Người tu thật giúp phản biện mê tín bị lợi dụng." };
       return row;
     });
+  }
+  if (sheetName === "Choices") {
+    const methodLabels = {
+      Belonging: "Gắn bó",
+      Safe: "An toàn",
+      Hope: "Hy vọng",
+      Clarity: "Sáng tỏ",
+      Backfire: "Phản tác dụng",
+    };
+    return rows.map((row) => ({
+      ...row,
+      method: methodLabels[row.method] ?? row.method,
+    }));
   }
   return rows;
 }
@@ -90,7 +106,7 @@ await fs.mkdir(OUT_DIR, { recursive: true });
 
 const manifest = {
   sourceWorkbook: SOURCE,
-  generatedAt: new Date().toISOString(),
+  generatedBy: "scripts/export-xlsx-data.mjs",
   files: {},
 };
 

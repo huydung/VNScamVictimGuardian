@@ -15,12 +15,34 @@ export const GAME_TUNING = {
   defaultReputation: 70,
   portraitY: 700,
   portraitScale: 0.74,
-  choiceButtonHeight: 96,
-  choiceButtonGap: 14,
+  choicePanelStartY: 1596,
+  choiceButtonHeight: 72,
+  choiceButtonGap: 6,
+  choiceFontSize: 20,
+  evidenceRailY: 1016,
+  evidenceRailHeight: 210,
+  evidenceCardWidth: 118,
+  evidenceCardHeight: 156,
+  documentModalWidth: 930,
+  documentModalHeight: 1260,
+  debugMenuWidth: 920,
+  debugMenuY: 304,
   particleCount: 28,
   stageTransitionMs: 420,
   vfxPulseMs: 260,
 };
+
+export const DEBUG_JUMPS = [
+  { label: "S0 mở đầu", beatId: "s0_00" },
+  { label: "S1 khách 1", beatId: "S1C1_S01" },
+  { label: "S1 lựa chọn", beatId: "S1C1_CHO" },
+  { label: "S2 tư vấn", beatId: "S2A_A1" },
+  { label: "CS2 về nhà", beatId: "cs2_1" },
+  { label: "S3 ngày 1", beatId: "d1n1" },
+  { label: "S3 sao kê", beatId: "d2s1" },
+  { label: "S3 cuối", beatId: "d3x1" },
+  { label: "Ending", beatId: "ENDING" },
+];
 
 export const COLORS = {
   ink: 0x102023,
@@ -101,4 +123,10 @@ export const UI_COPY = {
   relationship: "Tình thân",
   flags: "Dấu vết",
   muted: "Âm thanh",
+  debug: "QA",
+  close: "Đóng",
+  jump: "Nhảy cảnh",
+  documentDetail: "Chi tiết bằng chứng",
+  tell: "Dấu hiệu",
+  fields: "Trường dữ liệu",
 };

@@ -1,6 +1,6 @@
 {
   "sourceWorkbook": "outputs/2026-06-27-tinh-split-stage3-enriched/TINH_MVP_engine_data_v0_6_stage3_enriched.xlsx",
-  "generatedAt": "2026-06-27T06:21:28.886Z",
+  "generatedBy": "scripts/export-xlsx-data.mjs",
   "files": {
     "tactics": "tactics.json",
     "characters": "characters.json",

@@ -23,11 +23,11 @@
     },
     {
       "char_id": "me",
-      "name_vi": "Mẹ (Mother)",
+      "name_vi": "Mẹ",
       "role": "boss",
       "age": "~66",
       "appears_in": "CS2,S3",
-      "function": "Stage-3 emotional core; her face is the wellbeing readout.",
+      "function": "Nhân vật trung tâm của Stage 3; biểu cảm là chỉ dấu cảm xúc.",
       "expressions": "12-expression spine",
       "customer_id": null
     },
@@ -47,17 +47,17 @@
       "role": "ally",
       "age": "~60",
       "appears_in": "CS2,S3",
-      "function": "Mother’s sister; unlocks Day-actions; social proof.",
+      "function": "Đồng minh gia đình trong Stage 3.",
       "expressions": "worried,warm,relieved",
       "customer_id": null
     },
     {
       "char_id": "su_thay",
-      "name_vi": "Sư thầy (real monk)",
+      "name_vi": "Sư thầy",
       "role": "authority",
       "age": "~60",
       "appears_in": "S3 (gated)",
-      "function": "Honest counter to the fake ‘thầy’, same spiritual register.",
+      "function": "Người tu thật giúp phản biện mê tín bị lợi dụng.",
       "expressions": "calm,kind",
       "customer_id": null
     },
