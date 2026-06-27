@@ -13,6 +13,7 @@ export const GAME_TUNING = {
   defaultWellbeing: 55,
   defaultRelationship: 70,
   defaultReputation: 70,
+  defaultOpenness: 40,
   portraitY: 700,
   portraitScale: 0.74,
   choicePanelStartY: 1596,

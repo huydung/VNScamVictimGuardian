@@ -8,8 +8,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "export:data": "node scripts/export-xlsx-data.mjs",
+    "validate:data": "node scripts/validate-data.mjs",
     "generate:assets": "python3 scripts/generate-assets.py",
-    "prepare:game": "npm run export:data && npm run generate:assets"
+    "prepare:game": "npm run export:data && npm run generate:assets && npm run validate:data"
   },
   "dependencies": {
     "phaser": "^3.90.0"

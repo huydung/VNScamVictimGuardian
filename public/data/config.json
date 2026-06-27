@@ -7,6 +7,11 @@
       "note": "S3 Tài sản start"
     },
     {
+      "key": "meter.openness.start",
+      "value": "40",
+      "note": "S2 openness start"
+    },
+    {
       "key": "meter.wellbeing.start",
       "value": "55",
       "note": "S3 Tinh thần start"

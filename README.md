@@ -26,6 +26,8 @@ After editing the workbook, regenerate browser data:
 
 ```bash
 npm run export:data
+npm run generate:assets
+npm run validate:data
 ```
 
 This writes JSON into:
@@ -41,8 +43,12 @@ The browser game reads the JSON files, not the workbook directly. This keeps gam
 - `Beats`: scene nodes, speaker, text, background, portrait, document assets, next beat.
 - `Choices`: button labels, requirements, meter deltas, flags, revealed tactics, goto.
 - `Characters`: speaker names and roles.
+- `Customers`: Stage 1 queue rows and scam/genuine classification.
 - `Documents`: evidence card copy and tells.
+- `Statements`: sao kê rows.
+- `LinkedAccounts`: account-risk metadata.
 - `Tactics`: guidebook/tactic metadata.
+- `S2_Resolutions`: Stage 2 outcome thresholds and copy.
 - `Endings`: ending metadata.
 - `S3_Hubs`: Stage 3 day-planning actions, unlock gates, rewards, and risks.
 - `Config`: exported to `runtimeConfig.json`; currently also mirrored by code config for renderer constants.
@@ -69,6 +75,24 @@ Data-level tuning lives in the Excel `Config` sheet and is exported by:
 ```bash
 npm run export:data
 ```
+
+The runtime currently reads these workbook config keys directly:
+
+- `flow.firstBeat`
+- `meter.clamp`
+- `meter.money.start`
+- `meter.openness.start`
+- `meter.relationship.start`
+- `meter.wellbeing.start`
+- `s1.repStart`
+
+After data or asset changes, run:
+
+```bash
+npm run validate:data
+```
+
+The validator checks beat links, choice targets, document references, tactic IDs, Stage 3 hub scene links, config values, and required PNG assets.
 
 ## Testing The Game Flow
 
@@ -119,8 +143,9 @@ npm run dev          # run local dev server
 npm run build        # typecheck and build
 npm run preview      # preview production build
 npm run export:data  # Excel -> JSON
+npm run validate:data
 npm run generate:assets
-npm run prepare:game # export data + generate assets
+npm run prepare:game # export data + generate assets + validate
 ```
 
 ## Current MVP Scope

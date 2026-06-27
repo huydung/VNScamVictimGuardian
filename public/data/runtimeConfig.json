@@ -2,6 +2,7 @@
   "title": "DATA_Config — MVP global tunables",
   "values": {
     "meter.money.start": "40",
+    "meter.openness.start": "40",
     "meter.wellbeing.start": "55",
     "meter.relationship.start": "70",
     "meter.clamp": "[0,100]",
@@ -19,6 +20,11 @@
       "key": "meter.money.start",
       "value": "40",
       "note": "S3 Tài sản start"
+    },
+    {
+      "key": "meter.openness.start",
+      "value": "40",
+      "note": "S2 openness start"
     },
     {
       "key": "meter.wellbeing.start",

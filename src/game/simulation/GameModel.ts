@@ -1,4 +1,4 @@
-import { GAME_TUNING } from "../config/gameConfig";
+import { buildRuntimeSettings, type GameRuntimeSettings } from "../config/runtimeSettings";
 import type { Beat, Choice, DocumentRow, GameContent, S3HubAction } from "../data/types";
 
 export type MeterSnapshot = {
@@ -28,8 +28,8 @@ export type HubActionState = {
   startBeatId?: string;
 };
 
-function clamp(value: number): number {
-  return Math.max(GAME_TUNING.meterMin, Math.min(GAME_TUNING.meterMax, value));
+function clamp(value: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, value));
 }
 
 function numeric(value: number | null | undefined): number {
@@ -58,9 +58,11 @@ export class GameModel {
   readonly documentsById: Map<string, DocumentRow>;
   readonly s3HubsByDay: Map<number, S3HubAction[]>;
   readonly s3FirstBeatByScene: Map<string, string>;
+  readonly settings: GameRuntimeSettings;
   readonly state: GameState;
 
   constructor(readonly content: GameContent) {
+    this.settings = buildRuntimeSettings(content.runtimeConfig);
     this.beatsById = new Map(content.beats.map((beat) => [beat.beat_id, beat]));
     this.choicesByBeat = content.choices.reduce((map, choice) => {
       const choices = map.get(choice.beat_id) ?? [];
@@ -83,7 +85,7 @@ export class GameModel {
         .map((beat) => [String(beat.scene), beat.beat_id]),
     );
     this.state = {
-      currentBeatId: GAME_TUNING.firstBeatId,
+      currentBeatId: this.settings.firstBeatId,
       flags: {},
       revealedTactics: new Set<string>(),
       s3ActionsByDay: {
@@ -91,12 +93,12 @@ export class GameModel {
         2: [],
       },
       meters: {
-        rep: GAME_TUNING.defaultReputation,
+        rep: this.settings.defaultReputation,
         score: 0,
-        openness: 40,
-        money: GAME_TUNING.defaultMoney,
-        wellbeing: GAME_TUNING.defaultWellbeing,
-        relationship: GAME_TUNING.defaultRelationship,
+        openness: this.settings.defaultOpenness,
+        money: this.settings.defaultMoney,
+        wellbeing: this.settings.defaultWellbeing,
+        relationship: this.settings.defaultRelationship,
       },
     };
   }
@@ -189,12 +191,12 @@ export class GameModel {
 
   applyChoice(choice: Choice): void {
     this.state.lastChoice = choice;
-    this.state.meters.rep = clamp(this.state.meters.rep + numeric(choice.rep_delta));
-    this.state.meters.score = clamp(this.state.meters.score + numeric(choice.score_delta));
-    this.state.meters.openness = clamp(this.state.meters.openness + numeric(choice.openness_delta));
-    this.state.meters.money = clamp(this.state.meters.money + numeric(choice.money_delta));
-    this.state.meters.wellbeing = clamp(this.state.meters.wellbeing + numeric(choice.wellbeing_delta));
-    this.state.meters.relationship = clamp(this.state.meters.relationship + numeric(choice.relationship_delta));
+    this.state.meters.rep = this.clampMeter(this.state.meters.rep + numeric(choice.rep_delta));
+    this.state.meters.score = this.clampMeter(this.state.meters.score + numeric(choice.score_delta));
+    this.state.meters.openness = this.clampMeter(this.state.meters.openness + numeric(choice.openness_delta));
+    this.state.meters.money = this.clampMeter(this.state.meters.money + numeric(choice.money_delta));
+    this.state.meters.wellbeing = this.clampMeter(this.state.meters.wellbeing + numeric(choice.wellbeing_delta));
+    this.state.meters.relationship = this.clampMeter(this.state.meters.relationship + numeric(choice.relationship_delta));
 
     for (const [key, value] of parseFlags(choice.flag_set)) {
       this.state.flags[key] = value;
@@ -251,6 +253,10 @@ export class GameModel {
     const actions = this.s3HubsByDay.get(day) ?? [];
     const pickCount = actions[0]?.pick_count ?? 1;
     return (this.state.s3ActionsByDay[day] ?? []).length < pickCount;
+  }
+
+  private clampMeter(value: number): number {
+    return clamp(value, this.settings.meterMin, this.settings.meterMax);
   }
 
   private syntheticHubBeat(day: number): Beat {
