@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "export:data": "node scripts/export-xlsx-data.mjs",
-    "generate:assets": "node scripts/generate-assets.mjs",
+    "generate:assets": "python3 scripts/generate-assets.py",
     "prepare:game": "npm run export:data && npm run generate:assets"
   },
   "dependencies": {

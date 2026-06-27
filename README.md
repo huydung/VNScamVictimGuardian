@@ -19,7 +19,7 @@ Open the local Vite URL. The game uses a fixed `1080 x 1920` internal canvas and
 The human-editable source is:
 
 ```text
-outputs/2026-06-27-tinh-split-stage3-enriched/TINH_MVP_engine_data_v0_6_stage3_enriched.xlsx
+outputs/2026-06-27-tinh-split-stage3-enriched/TINH_MVP_engine_data_v0_7_source_clean.xlsx
 ```
 
 After editing the workbook, regenerate browser data:
@@ -34,7 +34,7 @@ This writes JSON into:
 public/data/
 ```
 
-The browser game reads the JSON files, not the workbook directly. This keeps gameplay fast and makes the runtime simple.
+The browser game reads the JSON files, not the workbook directly. This keeps gameplay fast and makes the runtime simple. The export script is a structural workbook-to-JSON pass; authored text, labels, rewards, risks, character names, and tuning values belong in the workbook.
 
 ## Which Sheets Drive The Game
 
@@ -97,10 +97,16 @@ npm run generate:assets
 The generator is:
 
 ```text
-scripts/generate-assets.mjs
+scripts/generate-assets.py
 ```
 
-It creates Vietnamese bank/home/temple backgrounds, character portraits, evidence documents, and simple WAV sound effects. Runtime asset routing is in:
+It creates PNG Vietnamese bank/home/temple backgrounds, transparent normalized character sprites, evidence document cards, and simple WAV sound effects. Character sprites are cropped and normalized from:
+
+```text
+public/assets/source/character-cast-source.png
+```
+
+Runtime asset routing is in:
 
 ```text
 src/game/assets/assetMap.ts

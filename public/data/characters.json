@@ -7,7 +7,7 @@
       "role": "player",
       "age": "~30s",
       "appears_in": "All",
-      "function": "Nhân vật đại diện người chơi.",
+      "function": "Nhân vật đại diện người chơi; chọn chân dung ở đầu game.",
       "expressions": "neutral,focused,worried,determined",
       "customer_id": null
     },
@@ -17,7 +17,7 @@
       "role": "mentor",
       "age": "~50",
       "appears_in": "S0,S1,CS1,S2",
-      "function": "Branch senior; delivers the Guidebook; the desk you relay to.",
+      "function": "Cố vấn chi nhánh; trao cẩm nang và phản hồi các quyết định tại quầy.",
       "expressions": "calm,wry,serious,proud",
       "customer_id": null
     },
@@ -27,7 +27,7 @@
       "role": "boss",
       "age": "~66",
       "appears_in": "CS2,S3",
-      "function": "Nhân vật trung tâm của Stage 3; biểu cảm là chỉ dấu cảm xúc.",
+      "function": "Trung tâm cảm xúc của Stage 3; biểu cảm và lời thoại phản ánh niềm tin, nỗi sợ, và sức khỏe tinh thần.",
       "expressions": "12-expression spine",
       "customer_id": null
     },
@@ -37,7 +37,7 @@
       "role": "antagonist",
       "age": "unknown",
       "appears_in": "S2-C,S3",
-      "function": "Off-screen antagonist; silhouette + voice only.",
+      "function": "Kẻ lừa đảo giả danh thầy; xuất hiện qua tin nhắn, giọng nói, tài khoản nhận tiền, và áp lực tâm linh.",
       "expressions": "silhouette",
       "customer_id": null
     },
@@ -47,7 +47,7 @@
       "role": "ally",
       "age": "~60",
       "appears_in": "CS2,S3",
-      "function": "Đồng minh gia đình trong Stage 3.",
+      "function": "Đồng minh gia đình; giúp tạo kênh lắng nghe không phán xét.",
       "expressions": "worried,warm,relieved",
       "customer_id": null
     },
@@ -57,7 +57,7 @@
       "role": "authority",
       "age": "~60",
       "appears_in": "S3 (gated)",
-      "function": "Người tu thật giúp phản biện mê tín bị lợi dụng.",
+      "function": "Người tu thật; dùng cùng ngôn ngữ tâm linh để phản biện sự lợi dụng niềm tin.",
       "expressions": "calm,kind",
       "customer_id": null
     },
@@ -67,7 +67,7 @@
       "role": "customer",
       "age": "68",
       "appears_in": "S1,S2",
-      "function": "Retired teacher; fake-police victim (tutorial).",
+      "function": "Giáo viên nghỉ hưu; nạn nhân tutorial của chiêu giả danh công an.",
       "expressions": "neutral,worried,scared,urgent,hopeful,relieved,confused,sad",
       "customer_id": "C1"
     },
@@ -77,7 +77,7 @@
       "role": "customer",
       "age": "35",
       "appears_in": "S1",
-      "function": "Shop owner; GENUINE (cash to supplier).",
+      "function": "Chủ cửa hàng; khách hợp lệ dùng để dạy người chơi không chặn nhầm.",
       "expressions": "neutral,slightly_impatient,grateful,defensive",
       "customer_id": "C2"
     },
@@ -87,7 +87,7 @@
       "role": "function",
       "age": null,
       "appears_in": "All",
-      "function": "Dẫn cảnh, không có chân dung.",
+      "function": "Dẫn cảnh; không có chân dung riêng.",
       "expressions": null,
       "customer_id": null
     },
@@ -107,7 +107,7 @@
       "role": "function",
       "age": null,
       "appears_in": "S0",
-      "function": "Lớp phủ cẩm nang 8 chiêu.",
+      "function": "Lớp phủ cẩm nang các thủ đoạn lừa đảo.",
       "expressions": null,
       "customer_id": null
     }

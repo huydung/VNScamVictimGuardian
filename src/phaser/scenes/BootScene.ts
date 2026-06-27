@@ -21,7 +21,7 @@ export class BootScene extends Phaser.Scene {
     });
 
     for (const asset of [...BACKGROUNDS, ...CHARACTERS, ...DOCUMENTS]) {
-      this.load.svg(asset.key, asset.url, { width: asset.width, height: asset.height });
+      this.load.image(asset.key, asset.url);
     }
     for (const sound of AUDIO) {
       this.load.audio(sound.key, sound.url);

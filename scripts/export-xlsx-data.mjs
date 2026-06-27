@@ -3,24 +3,24 @@ import path from "node:path";
 import XLSX from "xlsx";
 
 const SOURCE = process.env.TINH_DATA_XLSX ??
-  "outputs/2026-06-27-tinh-split-stage3-enriched/TINH_MVP_engine_data_v0_6_stage3_enriched.xlsx";
+  "outputs/2026-06-27-tinh-split-stage3-enriched/TINH_MVP_engine_data_v0_7_source_clean.xlsx";
 const OUT_DIR = "public/data";
-
-const sheets = [
-  ["Tactics", "tactics"],
-  ["Characters", "characters"],
-  ["Customers", "customers"],
-  ["Documents", "documents"],
-  ["Statements", "statements"],
-  ["LinkedAccounts", "linkedAccounts"],
-  ["Beats", "beats"],
-  ["Choices", "choices"],
-  ["S2_Resolutions", "s2Resolutions"],
-  ["S3_Hubs", "s3Hubs"],
-  ["Endings", "endings"],
-  ["Config", "configRows"],
-  ["AssetRefs", "assetRefs"],
-];
+const RUNTIME_HEADER_MARKERS = new Set([
+  "account_id",
+  "action_id",
+  "asset_id",
+  "beat_id",
+  "case_id",
+  "char_id",
+  "choice_id",
+  "customer_id",
+  "doc_id",
+  "ending_id",
+  "key",
+  "resolution_id",
+  "statement_id",
+  "tactic_id",
+]);
 
 function normalizeValue(value) {
   if (value == null) return null;
@@ -49,7 +49,21 @@ function rowObjects(sheet) {
       return object;
     })
     .filter((row) => Object.values(row).some((value) => value != null));
-  return { title: titleRow?.[0] ?? "", rows: objects };
+  return { title: titleRow?.[0] ?? "", headers, rows: objects };
+}
+
+function fileBaseFromSheetName(sheetName) {
+  const parts = sheetName
+    .split(/[^A-Za-z0-9]+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  if (parts.length === 0) return "sheet";
+  return parts
+    .map((part, index) => {
+      if (index === 0) return part.charAt(0).toLowerCase() + part.slice(1);
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    })
+    .join("");
 }
 
 function configObject(rows) {
@@ -61,84 +75,12 @@ function configObject(rows) {
   return config;
 }
 
-function localizeRows(sheetName, rows) {
-  if (sheetName === "Beats") {
-    return rows.map((row) => {
-      if (row.beat_id === "s0_00") {
-        return {
-          ...row,
-          text_vi: "Chọn nhân vật của bạn — Nam / Nữ. Đây chỉ là lựa chọn chân dung; lời thoại vẫn dùng cách xưng hô trung tính.",
-        };
-      }
-      return row;
-    });
-  }
-  if (sheetName === "Characters") {
-    return rows.map((row) => {
-      if (row.char_id === "player") return { ...row, name_vi: "Bạn", function: "Nhân vật đại diện người chơi." };
-      if (row.char_id === "system") return { ...row, name_vi: "Hệ thống", function: "Thông báo hệ thống và chuyển cảnh." };
-      if (row.char_id === "narrator") return { ...row, name_vi: "Người kể", function: "Dẫn cảnh, không có chân dung." };
-      if (row.char_id === "guidebook") return { ...row, name_vi: "Cẩm nang", function: "Lớp phủ cẩm nang 8 chiêu." };
-      if (row.char_id === "me") return { ...row, name_vi: "Mẹ", function: "Nhân vật trung tâm của Stage 3; biểu cảm là chỉ dấu cảm xúc." };
-      if (row.char_id === "di_tu") return { ...row, name_vi: "Dì Tư", function: "Đồng minh gia đình trong Stage 3." };
-      if (row.char_id === "su_thay") return { ...row, name_vi: "Sư thầy", function: "Người tu thật giúp phản biện mê tín bị lợi dụng." };
-      return row;
-    });
-  }
-  if (sheetName === "Choices") {
-    const methodLabels = {
-      Belonging: "Gắn bó",
-      Safe: "An toàn",
-      Hope: "Hy vọng",
-      Clarity: "Sáng tỏ",
-      Backfire: "Phản tác dụng",
-    };
-    return rows.map((row) => ({
-      ...row,
-      method: methodLabels[row.method] ?? row.method,
-    }));
-  }
-  if (sheetName === "S3_Hubs") {
-    const copy = {
-      d1_nghe: {
-        reward: "Hiểu cách kẻ lừa đảo xây lòng tin qua chuyện gia đình, nỗi buồn, sức khoẻ và vận hạn.",
-        risk: "Phán xét quá sớm khiến mẹ giấu thêm.",
-      },
-      d1_phone: {
-        reward: "Thấy lời dặn giữ bí mật, tin nhắn hỏi han và hạn giờ chuyển tiền.",
-        risk: "Ép xem điện thoại làm giảm Tình thân.",
-      },
-      d1_aunt: {
-        reward: "Tạo đồng minh gia đình biết lắng nghe trước khi đối chất.",
-        risk: "Nếu biến thành mắng mỏ, mẹ thấy mình bị bao vây.",
-      },
-      d2_temple: {
-        reward: "Dùng đúng ngôn ngữ tâm linh để phản biện kẻ lợi dụng niềm tin.",
-        risk: "Chỉ mở khi mẹ đã chịu kể và còn đủ tin con.",
-      },
-      d2_aunt2: {
-        reward: "Dì Tư thay thế vai trò cảm xúc mà kẻ lừa đảo đang chiếm.",
-        risk: "Áp lực gia đình quá mạnh có thể thành buộc tội.",
-      },
-      d2_report: {
-        reward: "Giữ bằng chứng, bảo vệ tiền, và chuẩn bị báo công an.",
-        risk: "Làm sau lưng mẹ có thể khiến mẹ mất cảm giác tự chủ.",
-      },
-      d2_saoke: {
-        reward: "Cho mẹ thấy bậc thang cam kết: khoản nhỏ dẫn tới khoản lớn.",
-        risk: "Nếu nói như kết tội, bằng chứng biến thành xấu hổ.",
-      },
-    };
-    return rows.map((row) => ({
-      ...row,
-      reward: copy[row.action_id]?.reward ?? row.reward,
-      risk: copy[row.action_id]?.risk ?? row.risk,
-    }));
-  }
-  return rows;
+function isRuntimeTable(headers) {
+  return headers.some((header) => RUNTIME_HEADER_MARKERS.has(header));
 }
 
 const workbook = XLSX.readFile(SOURCE);
+await fs.rm(OUT_DIR, { recursive: true, force: true });
 await fs.mkdir(OUT_DIR, { recursive: true });
 
 const manifest = {
@@ -146,20 +88,22 @@ const manifest = {
   generatedBy: "scripts/export-xlsx-data.mjs",
   files: {},
 };
+let exportedCount = 0;
 
-for (const [sheetName, fileBase] of sheets) {
+for (const sheetName of workbook.SheetNames) {
+  const fileBase = fileBaseFromSheetName(sheetName);
   const sheet = workbook.Sheets[sheetName];
-  if (!sheet) throw new Error(`Missing required sheet: ${sheetName}`);
-  const { title, rows: rawRows } = rowObjects(sheet);
-  const rows = localizeRows(sheetName, rawRows);
+  const { title, headers, rows } = rowObjects(sheet);
+  if (!isRuntimeTable(headers)) continue;
   const fileName = `${fileBase}.json`;
   manifest.files[fileBase] = fileName;
+  exportedCount += 1;
   await fs.writeFile(
     path.join(OUT_DIR, fileName),
     JSON.stringify({ title, rows }, null, 2),
     "utf8",
   );
-  if (sheetName === "Config") {
+  if (fileBase === "config") {
     await fs.writeFile(
       path.join(OUT_DIR, "runtimeConfig.json"),
       JSON.stringify({ title, values: configObject(rows), rows }, null, 2),
@@ -170,4 +114,4 @@ for (const [sheetName, fileBase] of sheets) {
 }
 
 await fs.writeFile(path.join(OUT_DIR, "manifest.json"), JSON.stringify(manifest, null, 2), "utf8");
-console.log(`Exported ${sheets.length} sheets from ${SOURCE} to ${OUT_DIR}`);
+console.log(`Exported ${exportedCount} runtime sheets from ${SOURCE} to ${OUT_DIR}`);

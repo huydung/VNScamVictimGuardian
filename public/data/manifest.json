@@ -1,5 +1,5 @@
 {
-  "sourceWorkbook": "outputs/2026-06-27-tinh-split-stage3-enriched/TINH_MVP_engine_data_v0_6_stage3_enriched.xlsx",
+  "sourceWorkbook": "outputs/2026-06-27-tinh-split-stage3-enriched/TINH_MVP_engine_data_v0_7_source_clean.xlsx",
   "generatedBy": "scripts/export-xlsx-data.mjs",
   "files": {
     "tactics": "tactics.json",
@@ -13,7 +13,7 @@
     "s2Resolutions": "s2Resolutions.json",
     "s3Hubs": "s3Hubs.json",
     "endings": "endings.json",
-    "configRows": "configRows.json",
+    "config": "config.json",
     "runtimeConfig": "runtimeConfig.json",
     "assetRefs": "assetRefs.json"
   }
