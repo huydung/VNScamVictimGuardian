@@ -1,0 +1,95 @@
+{
+  "title": "DATA_Documents — MVP doc instances for C1, C2, and Stage 3 mother rescue",
+  "rows": [
+    {
+      "doc_id": "doc_police_order_fake",
+      "doc_type": "police_order_fake",
+      "customer_id": "C1",
+      "name_vi": "‘Lệnh bắt / Quyết định tạm giữ’ (giả)",
+      "has_tell": true,
+      "tactic_id": "gia_danh",
+      "fields_summary": "Quốc huy · ‘Bộ Công an/VKSND’ · Tên nạn nhân · Tội danh · Yêu cầu chuyển ‘TK tạm giữ’",
+      "tell_desc": "Cơ quan thật không gửi lệnh qua ảnh/Zalo, không đòi chuyển tiền ‘xác minh’; lỗi chính tả, dấu mờ."
+    },
+    {
+      "doc_id": "doc_transfer_order_hanh",
+      "doc_type": "transfer_order",
+      "customer_id": "C1",
+      "name_vi": "Uỷ nhiệm chi",
+      "has_tell": true,
+      "tactic_id": "gia_danh",
+      "fields_summary": "Người chuyển · Người thụ hưởng · NH · Số tiền · Nội dung · Ngày · Chữ ký",
+      "tell_desc": "Người thụ hưởng là TK cá nhân, không phải cơ quan; nội dung chung chung."
+    },
+    {
+      "doc_id": "doc_withdraw_slip_tam",
+      "doc_type": "withdraw_slip",
+      "customer_id": "C2",
+      "name_vi": "Phiếu rút tiền mặt",
+      "has_tell": false,
+      "tactic_id": null,
+      "fields_summary": "Số TK · Chủ TK · Số tiền · Nội dung · Ngày · Chữ ký",
+      "tell_desc": "Không có tell — khớp ngành nghề & sao kê đều đặn."
+    },
+    {
+      "doc_id": "doc_supplier_invoice_tam",
+      "doc_type": "supplier_invoice",
+      "customer_id": "C2",
+      "name_vi": "Hoá đơn nhà cung cấp (thật)",
+      "has_tell": false,
+      "tactic_id": null,
+      "fields_summary": "Tên cty · MST · Mặt hàng · Số tiền · Ngày",
+      "tell_desc": "Không có tell — chứng từ thật."
+    },
+    {
+      "doc_id": "doc_me_zalo_chat_thay",
+      "doc_type": "message_thread",
+      "customer_id": "MOM",
+      "name_vi": "Chuỗi tin nhắn với ‘thầy’",
+      "has_tell": true,
+      "tactic_id": "tam_linh;bi_mat;bac_thang",
+      "fields_summary": "Lời hỏi thăm sức khoẻ · tên con cháu · ảnh bàn thờ · yêu cầu giữ kín · lịch chuyển khoản",
+      "tell_desc": "Scammer xây quan hệ bằng chăm sóc cá nhân, nhớ chi tiết gia đình, rồi dần cô lập mẹ khỏi con cái."
+    },
+    {
+      "doc_id": "doc_me_ritual_receipts",
+      "doc_type": "receipt_bundle",
+      "customer_id": "MOM",
+      "name_vi": "Biên nhận lễ giải hạn nhiều đợt",
+      "has_tell": true,
+      "tactic_id": "go_gac;tam_linh",
+      "fields_summary": "3 biên nhận viết tay · số tiền tăng dần · cùng STK cá nhân · ghi chú ‘lễ nối lễ’",
+      "tell_desc": "Cam kết trước đó khiến mẹ sợ dừng lại sẽ mất hết công đức và tiền đã đóng."
+    },
+    {
+      "doc_id": "doc_me_bank_transfer_history",
+      "doc_type": "statement_summary",
+      "customer_id": "MOM",
+      "name_vi": "Bảng tổng hợp chuyển khoản cho ‘thầy’",
+      "has_tell": true,
+      "tactic_id": "go_gac;bac_thang;gap_gap",
+      "fields_summary": "30tr → 70tr → 100tr → 100tr → 300tr dự kiến · mỗi lần gắn một lời hứa mới",
+      "tell_desc": "Dòng tiền cho thấy bậc thang cam kết: khoản sau được biện minh bằng khoản trước."
+    },
+    {
+      "doc_id": "doc_me_lucky_day_calendar",
+      "doc_type": "ritual_calendar",
+      "customer_id": "MOM",
+      "name_vi": "Lịch ngày đẹp / ngày xấu",
+      "has_tell": true,
+      "tactic_id": "gap_gap;tam_linh",
+      "fields_summary": "Khoanh đỏ giờ chuyển tiền · ghi ‘qua giờ là hạn nặng’ · lời nhắc gọi video",
+      "tell_desc": "Tạo deadline tâm linh để ép quyết định nhanh."
+    },
+    {
+      "doc_id": "doc_me_thay_account_warning",
+      "doc_type": "account_warning",
+      "customer_id": "MOM",
+      "name_vi": "Kết quả tra cứu STK của ‘thầy’",
+      "has_tell": true,
+      "tactic_id": "gia_danh;go_gac",
+      "fields_summary": "STK cá nhân · nhiều báo cáo nhận tiền lễ · tên chủ TK không khớp danh xưng",
+      "tell_desc": "Bằng chứng cứng cho hành động báo công an hoặc xem sao kê cùng mẹ."
+    }
+  ]
+}

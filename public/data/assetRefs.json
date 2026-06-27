@@ -1,0 +1,195 @@
+{
+  "title": "ASSET_REFS — generated from retained MVP content",
+  "rows": [
+    {
+      "asset_id": "bg_bank_counter",
+      "referenced_as": "bg_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "bg_consult_desk",
+      "referenced_as": "bg_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "bg_home",
+      "referenced_as": "bg_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_anh_tam_neutral",
+      "referenced_as": "char_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_ba_hanh_confused",
+      "referenced_as": "char_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_ba_hanh_hopeful",
+      "referenced_as": "char_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_ba_hanh_neutral",
+      "referenced_as": "char_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_ba_hanh_relieved",
+      "referenced_as": "char_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_ba_hanh_scared",
+      "referenced_as": "char_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_ba_hanh_urgent",
+      "referenced_as": "char_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_ba_hanh_worried",
+      "referenced_as": "char_asset",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_anxious",
+      "referenced_as": "mother_expression_from_choice",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_ashamed",
+      "referenced_as": "mother_expression_from_choice",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_ashamed_fearful",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_calm",
+      "referenced_as": "mother_expression_from_choice",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_conflicted_fearful",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_decision_point",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_defensive",
+      "referenced_as": "mother_expression_from_choice",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_hopeful",
+      "referenced_as": "mother_expression_from_choice",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_listening_shaken",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_neutral",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_pleading_ashamed",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_protective_defensive",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_relieved",
+      "referenced_as": "mother_expression_from_choice",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_tearful",
+      "referenced_as": "mother_expression_from_choice",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_tearful_realization",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_terrified_loving",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_warm",
+      "referenced_as": "mother_expression_from_choice",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "char_me_withdrawn",
+      "referenced_as": "mother_required_expression",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_me_bank_transfer_history",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_me_lucky_day_calendar",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_me_ritual_receipts",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_me_thay_account_warning",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_me_zalo_chat_thay",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_police_order_fake",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_supplier_invoice_tam",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_transfer_order_hanh",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    },
+    {
+      "asset_id": "doc_withdraw_slip_tam",
+      "referenced_as": "document_content",
+      "note": "Referenced by MVP data pack"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "title": "DATA_Config — MVP global tunables",
+  "values": {
+    "meter.money.start": "40",
+    "meter.wellbeing.start": "55",
+    "meter.relationship.start": "70",
+    "meter.clamp": "[0,100]",
+    "s1.customerCount": "2",
+    "s1.requiredCatches": "1",
+    "s1.genuineCount": "1",
+    "s1.passScore": "12",
+    "s1.repStart": "70",
+    "s2.enabledCases": "S2A",
+    "flow": "s0→S1(C1,C2)→cs1→S2A→cs2→S3→ENDING",
+    "flow.firstBeat": "s0_00"
+  },
+  "rows": [
+    {
+      "key": "meter.money.start",
+      "value": "40",
+      "note": "S3 Tài sản start"
+    },
+    {
+      "key": "meter.wellbeing.start",
+      "value": "55",
+      "note": "S3 Tinh thần start"
+    },
+    {
+      "key": "meter.relationship.start",
+      "value": "70",
+      "note": "S3 Tình thân start"
+    },
+    {
+      "key": "meter.clamp",
+      "value": "[0,100]",
+      "note": "clamp every meter/openness"
+    },
+    {
+      "key": "s1.customerCount",
+      "value": "2",
+      "note": "MVP keeps C1 scam victim and C2 genuine customer"
+    },
+    {
+      "key": "s1.requiredCatches",
+      "value": "1",
+      "note": "catch >=1 victim to pass"
+    },
+    {
+      "key": "s1.genuineCount",
+      "value": "1",
+      "note": "C2 only"
+    },
+    {
+      "key": "s1.passScore",
+      "value": "12",
+      "note": "reachable in the two-customer MVP; max clean score is 16"
+    },
+    {
+      "key": "s1.repStart",
+      "value": "70",
+      "note": "Uy tín start"
+    },
+    {
+      "key": "s2.enabledCases",
+      "value": "S2A",
+      "note": "MVP keeps Bà Hạnh only"
+    },
+    {
+      "key": "flow",
+      "value": "s0→S1(C1,C2)→cs1→S2A→cs2→S3→ENDING",
+      "note": "trimmed MVP order"
+    },
+    {
+      "key": "flow.firstBeat",
+      "value": "s0_00",
+      "note": "boot into avatar select"
+    }
+  ]
+}

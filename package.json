@@ -1,0 +1,23 @@
+{
+  "name": "vn-scam-victim-guardian",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "export:data": "node scripts/export-xlsx-data.mjs",
+    "generate:assets": "node scripts/generate-assets.mjs",
+    "prepare:game": "npm run export:data && npm run generate:assets"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.11",
+    "xlsx": "^0.18.5"
+  }
+}

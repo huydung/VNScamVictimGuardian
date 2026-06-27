@@ -1,0 +1,26 @@
+{
+  "title": "DATA_Endings — full Stage 3 endings",
+  "rows": [
+    {
+      "order_idx": 1,
+      "ending_id": "best",
+      "name_vi": "Tỉnh",
+      "condition": "money>=35 AND wellbeing>=50 AND relationship>=50 AND reported==true",
+      "tone": "Hard-won relief; what was lost stays lost."
+    },
+    {
+      "order_idx": 2,
+      "ending_id": "worst",
+      "name_vi": "Đổ vỡ",
+      "condition": "money<15 AND (relationship<20 OR wellbeing<20)",
+      "tone": "Estrangement / collapse of hope (sober)."
+    },
+    {
+      "order_idx": 3,
+      "ending_id": "mixed",
+      "name_vi": "Tạm ổn",
+      "condition": "otherwise (catch-all)",
+      "tone": "Triage; bruised but intact."
+    }
+  ]
+}

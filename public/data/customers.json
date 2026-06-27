@@ -1,0 +1,33 @@
+{
+  "title": "DATA_Customers — Stage 1 MVP queue (1 scam victim + 1 legit)",
+  "rows": [
+    {
+      "customer_id": "C1",
+      "char_id": "ba_hanh",
+      "persona": "Bà Hạnh — retired teacher",
+      "age": 68,
+      "request": "Rút 200tr → ‘tài khoản tạm giữ của cơ quan điều tra’.",
+      "is_scam_victim": true,
+      "correct_action": "relay",
+      "tactics": "gia_danh;gap_gap;khoa_so_hai;bi_mat",
+      "difficulty": "Tutorial — explanation full of tells",
+      "require_flag_to_relay": true,
+      "stage2_case": "S2A",
+      "s2_threshold": 58
+    },
+    {
+      "customer_id": "C2",
+      "char_id": "anh_tam",
+      "persona": "Anh Tâm — shop owner",
+      "age": 35,
+      "request": "Rút 150tr trả nhà cung cấp.",
+      "is_scam_victim": false,
+      "correct_action": "approve",
+      "tactics": null,
+      "difficulty": "Easy — sao kê shows regular pattern",
+      "require_flag_to_relay": false,
+      "stage2_case": null,
+      "s2_threshold": null
+    }
+  ]
+}

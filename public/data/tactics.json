@@ -1,0 +1,85 @@
+{
+  "title": "DATA_Tactics — guidebook cards",
+  "rows": [
+    {
+      "tactic_id": "gia_danh",
+      "name_vi": "Giả Danh",
+      "name_en": "The Poser Play",
+      "type": "impersonation",
+      "desc_vi": "Kẻ lừa đảo nấp sau danh tính giả: công an, viện kiểm sát, nhân viên ngân hàng, người thân. Đừng tin ngay — gọi lại bằng số tổng đài chính thức để xác minh.",
+      "icon_asset": "icon_gia_danh",
+      "collected_when": "S1-C1/C6 flag, or S2-A reveal",
+      "lineage": "BSR Poser Play"
+    },
+    {
+      "tactic_id": "gap_gap",
+      "name_vi": "Gấp Gáp",
+      "name_en": "The Tick-Tock Trick",
+      "type": "urgency",
+      "desc_vi": "‘Phải làm ngay hôm nay, nếu không thì…’. Tạo khẩn cấp giả để bạn hành động mà không kịp nghĩ. Luôn dừng lại.",
+      "icon_asset": "icon_gap_gap",
+      "collected_when": "S1-C1/C8 flag urgency, or any urgency reveal",
+      "lineage": "BSR Tick-Tock"
+    },
+    {
+      "tactic_id": "khoa_so_hai",
+      "name_vi": "Khoá Sợ Hãi",
+      "name_en": "The Fear Lock",
+      "type": "fear",
+      "desc_vi": "Doạ dính án ma tuý, rửa tiền, sắp bị bắt — nỗi sợ khiến bạn mất bình tĩnh. Cơ quan thật không đòi chuyển tiền qua điện thoại.",
+      "icon_asset": "icon_khoa_so_hai",
+      "collected_when": "S1-C1 or S2-A",
+      "lineage": "BSR Feeling Trap (fear)"
+    },
+    {
+      "tactic_id": "bi_mat",
+      "name_vi": "Bí Mật & Cô Lập",
+      "name_en": "The Silence Trap",
+      "type": "isolation",
+      "desc_vi": "‘Không được kể với ai — kể cả người nhà hay nhân viên ngân hàng.’ Cô lập nạn nhân khỏi người cứu được họ là dấu hiệu gần như chắc chắn.",
+      "icon_asset": "icon_bi_mat",
+      "collected_when": "S1-C1 flag secrecy, or S3 hidden payment",
+      "lineage": "VN/bank-specific"
+    },
+    {
+      "tactic_id": "moi_loi_nhuan",
+      "name_vi": "Mồi Lợi Nhuận",
+      "name_en": "The Golden Carrot",
+      "type": "greed",
+      "desc_vi": "Lãi trên trời, ‘việc nhẹ lương cao’, cơ hội chỉ-hôm-nay. Lợi nhuận càng phi lý, rủi ro càng thật.",
+      "icon_asset": "icon_moi_loi_nhuan",
+      "collected_when": "S1-C3/C5 or S2-B",
+      "lineage": "BSR Feeling Trap (greed)"
+    },
+    {
+      "tactic_id": "tam_linh",
+      "name_vi": "Tâm Linh & Vận Hạn",
+      "name_en": "The Spirit Snare",
+      "type": "spiritual",
+      "desc_vi": "‘Nhà đang vận hạn nặng, phải làm lễ / đóng tiền mới hoá giải.’ Tín ngưỡng là thật; tiền chạy vào tài khoản cá nhân thì không phải là lễ.",
+      "icon_asset": "icon_tam_linh",
+      "collected_when": "S1-C8, S2-C, or S3",
+      "lineage": "VN-specific"
+    },
+    {
+      "tactic_id": "bac_thang",
+      "name_vi": "Bắc Thang Đồng Ý",
+      "name_en": "The Yes Ladder",
+      "type": "foot_in_door",
+      "desc_vi": "Bắt đầu bằng yêu cầu nhỏ dễ đồng ý (cài app, đọc mã, chuyển ít). Gật vài lần rồi khó dừng. Thấy không ổn cứ nói không.",
+      "icon_asset": "icon_bac_thang",
+      "collected_when": "S1-C3/C5 or S2-B",
+      "lineage": "BSR Yes Ladder"
+    },
+    {
+      "tactic_id": "go_gac",
+      "name_vi": "Gỡ Gạc",
+      "name_en": "The Sunk-Cost Lure",
+      "type": "sunk_cost",
+      "desc_vi": "‘Đóng thêm để lấy lại khoản đã mất’ — hoặc ‘dịch vụ thu hồi’ hứa đòi lại tiền bị lừa. Lừa-trên-lừa, đánh vào tâm lý tiếc của.",
+      "icon_asset": "icon_go_gac",
+      "collected_when": "S1-C3 or S2-B",
+      "lineage": "VN/bank-specific"
+    }
+  ]
+}

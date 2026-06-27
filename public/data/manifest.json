@@ -1,0 +1,20 @@
+{
+  "sourceWorkbook": "outputs/2026-06-27-tinh-split-stage3-enriched/TINH_MVP_engine_data_v0_6_stage3_enriched.xlsx",
+  "generatedAt": "2026-06-27T06:21:28.886Z",
+  "files": {
+    "tactics": "tactics.json",
+    "characters": "characters.json",
+    "customers": "customers.json",
+    "documents": "documents.json",
+    "statements": "statements.json",
+    "linkedAccounts": "linkedAccounts.json",
+    "beats": "beats.json",
+    "choices": "choices.json",
+    "s2Resolutions": "s2Resolutions.json",
+    "s3Hubs": "s3Hubs.json",
+    "endings": "endings.json",
+    "configRows": "configRows.json",
+    "runtimeConfig": "runtimeConfig.json",
+    "assetRefs": "assetRefs.json"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "DATA_S2_Resolutions — MVP S2A only",
+  "rows": [
+    {
+      "from_customer": "C1",
+      "case_id": "S2A",
+      "openness_start": 40,
+      "success_min": 58,
+      "neutral_min": 46,
+      "success_text": "Bà gật: ‘Hay là… để cô gọi lại cho chắc.’ — hẹn gọi tổng đài.",
+      "neutral_text": "Chưa thông nhưng không tổn thương; bà nói sẽ suy nghĩ.",
+      "setback_text": "Bà phòng thủ, bỏ đi làm chỗ khác.",
+      "success_flags": "seeded"
+    }
+  ]
+}

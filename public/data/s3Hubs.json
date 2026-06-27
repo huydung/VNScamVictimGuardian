@@ -1,0 +1,82 @@
+{
+  "title": "DATA_S3_Hubs — full Stage 3 day hubs",
+  "rows": [
+    {
+      "day": 1,
+      "action_id": "d1_nghe",
+      "label_vi": "Ngồi nghe mẹ kể từ đầu",
+      "opens_scene": "NGHE",
+      "gate_flag": null,
+      "pick_count": 2,
+      "actions_total": 3,
+      "reward": "Reveal how the scammer built trust through remembered family details, grief, health check-ins, and fear of bad luck.",
+      "risk": "If player judges too early, mother hides the relationship."
+    },
+    {
+      "day": 1,
+      "action_id": "d1_phone",
+      "label_vi": "Cùng mẹ xem điện thoại",
+      "opens_scene": "PHONE",
+      "gate_flag": null,
+      "pick_count": 2,
+      "actions_total": 3,
+      "reward": "Expose secrecy scripts, voice notes, lucky-day deadlines, and the way ‘thầy’ provides emotional attention.",
+      "risk": "Pressuring for the phone costs Tình thân."
+    },
+    {
+      "day": 1,
+      "action_id": "d1_aunt",
+      "label_vi": "Gọi dì Tư làm đồng minh",
+      "opens_scene": "AUNT",
+      "gate_flag": null,
+      "pick_count": 2,
+      "actions_total": 3,
+      "reward": "Build a non-judgmental family support channel before confronting evidence.",
+      "risk": "If framed as scolding, mother feels surrounded."
+    },
+    {
+      "day": 2,
+      "action_id": "d2_temple",
+      "label_vi": "Đưa mẹ hỏi sư thầy thật",
+      "opens_scene": "TEMPLE",
+      "gate_flag": "mumOpened",
+      "pick_count": 2,
+      "actions_total": 4,
+      "reward": "Counter spiritual manipulation using a trusted spiritual register, not mockery.",
+      "risk": "Only works after mother has opened up."
+    },
+    {
+      "day": 2,
+      "action_id": "d2_aunt2",
+      "label_vi": "Rủ dì Tư sang uống trà",
+      "opens_scene": "AUNT2",
+      "gate_flag": "allyAunt",
+      "pick_count": 2,
+      "actions_total": 4,
+      "reward": "Use family memory and care to replace the scammer's emotional role.",
+      "risk": "Too much pressure turns ally into an accusation."
+    },
+    {
+      "day": 2,
+      "action_id": "d2_report",
+      "label_vi": "Tra STK / báo công an",
+      "opens_scene": "REPORT",
+      "gate_flag": null,
+      "pick_count": 2,
+      "actions_total": 4,
+      "reward": "Protect money and preserve evidence while deciding how much to tell mother.",
+      "risk": "Going around mother can protect assets but hurt agency."
+    },
+    {
+      "day": 2,
+      "action_id": "d2_saoke",
+      "label_vi": "Cùng mẹ xem lại sao kê",
+      "opens_scene": "SAOKE",
+      "gate_flag": null,
+      "pick_count": 2,
+      "actions_total": 4,
+      "reward": "Show escalation and sunk-cost pattern: small first transfer, larger rituals, deadline-driven withdrawals.",
+      "risk": "Accusatory framing converts evidence into shame."
+    }
+  ]
+}

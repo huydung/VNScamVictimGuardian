@@ -1,0 +1,149 @@
+{
+  "title": "DATA_Statements — MVP sao kê rows for C1, C2, and Stage 3 mother rescue",
+  "rows": [
+    {
+      "stmt_id": "C1_st01",
+      "customer_id": "C1",
+      "tab": "sao_ke",
+      "ngay": "2025-04-05",
+      "dien_giai": "Lương hưu",
+      "ghi_no": 0,
+      "ghi_co": 6000000,
+      "so_du": 68000000,
+      "doi_tac": "BHXH",
+      "is_tell_row": false
+    },
+    {
+      "stmt_id": "C1_st02",
+      "customer_id": "C1",
+      "tab": "sao_ke",
+      "ngay": "2025-05-05",
+      "dien_giai": "Lương hưu",
+      "ghi_no": 0,
+      "ghi_co": 6000000,
+      "so_du": 74000000,
+      "doi_tac": "BHXH",
+      "is_tell_row": false
+    },
+    {
+      "stmt_id": "C1_st03",
+      "customer_id": "C1",
+      "tab": "sao_ke",
+      "ngay": "2025-06-05",
+      "dien_giai": "Lương hưu",
+      "ghi_no": 0,
+      "ghi_co": 6000000,
+      "so_du": 80000000,
+      "doi_tac": "BHXH",
+      "is_tell_row": false
+    },
+    {
+      "stmt_id": "C1_st04",
+      "customer_id": "C1",
+      "tab": "sao_ke",
+      "ngay": "2025-06-27",
+      "dien_giai": "Đề nghị chuyển 200tr hôm nay",
+      "ghi_no": 200000000,
+      "ghi_co": 0,
+      "so_du": -120000000,
+      "doi_tac": "TK tạm giữ (cá nhân)",
+      "is_tell_row": true
+    },
+    {
+      "stmt_id": "C2_st01",
+      "customer_id": "C2",
+      "tab": "sao_ke",
+      "ngay": "2025-04-30",
+      "dien_giai": "Rút tiền mặt trả NCC",
+      "ghi_no": 150000000,
+      "ghi_co": 0,
+      "so_du": 30000000,
+      "doi_tac": "NCC",
+      "is_tell_row": false
+    },
+    {
+      "stmt_id": "C2_st02",
+      "customer_id": "C2",
+      "tab": "sao_ke",
+      "ngay": "2025-05-15",
+      "dien_giai": "Ghi có doanh thu",
+      "ghi_no": 0,
+      "ghi_co": 180000000,
+      "so_du": 210000000,
+      "doi_tac": "KH",
+      "is_tell_row": false
+    },
+    {
+      "stmt_id": "C2_st03",
+      "customer_id": "C2",
+      "tab": "sao_ke",
+      "ngay": "2025-05-31",
+      "dien_giai": "Rút tiền mặt trả NCC",
+      "ghi_no": 150000000,
+      "ghi_co": 0,
+      "so_du": 60000000,
+      "doi_tac": "NCC",
+      "is_tell_row": false
+    },
+    {
+      "stmt_id": "MOM_st01",
+      "customer_id": "MOM",
+      "tab": "sao_ke",
+      "ngay": "2025-05-03",
+      "dien_giai": "Chuyển lễ cầu an lần 1",
+      "ghi_no": 30000000,
+      "ghi_co": 0,
+      "so_du": 270000000,
+      "doi_tac": "TK ‘thầy’",
+      "is_tell_row": true
+    },
+    {
+      "stmt_id": "MOM_st02",
+      "customer_id": "MOM",
+      "tab": "sao_ke",
+      "ngay": "2025-05-19",
+      "dien_giai": "Chuyển lễ trả nợ âm / mở cung tài",
+      "ghi_no": 70000000,
+      "ghi_co": 0,
+      "so_du": 200000000,
+      "doi_tac": "TK ‘thầy’",
+      "is_tell_row": true
+    },
+    {
+      "stmt_id": "MOM_st03",
+      "customer_id": "MOM",
+      "tab": "sao_ke",
+      "ngay": "2025-06-06",
+      "dien_giai": "Rút tiền mặt theo ‘ngày đẹp’",
+      "ghi_no": 100000000,
+      "ghi_co": 0,
+      "so_du": 100000000,
+      "doi_tac": "Theo chỉ dẫn qua Zalo",
+      "is_tell_row": true
+    },
+    {
+      "stmt_id": "MOM_st04",
+      "customer_id": "MOM",
+      "tab": "sao_ke",
+      "ngay": "2025-06-16",
+      "dien_giai": "Rút thêm để ‘giữ vía’",
+      "ghi_no": 100000000,
+      "ghi_co": 0,
+      "so_du": 0,
+      "doi_tac": "Theo chỉ dẫn qua Zalo",
+      "is_tell_row": true
+    },
+    {
+      "stmt_id": "MOM_st05",
+      "customer_id": "MOM",
+      "tab": "sao_ke",
+      "ngay": "2025-06-27",
+      "dien_giai": "Dự kiến chuyển đợt cuối giải hạn",
+      "ghi_no": 300000000,
+      "ghi_co": 0,
+      "so_du": -300000000,
+      "doi_tac": "TK cá nhân của ‘thầy’",
+      "is_tell_row": true
+    }
+  ]
+}

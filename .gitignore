@@ -7,3 +7,4 @@ dist/
 *.log
 *.inspect.ndjson
 outputs/**/verification.txt
+outputs/*.png

@@ -1,0 +1,115 @@
+{
+  "title": "DATA_Characters — MVP cast only",
+  "rows": [
+    {
+      "char_id": "player",
+      "name_vi": "Bạn",
+      "role": "player",
+      "age": "~30s",
+      "appears_in": "All",
+      "function": "Nhân vật đại diện người chơi.",
+      "expressions": "neutral,focused,worried,determined",
+      "customer_id": null
+    },
+    {
+      "char_id": "son",
+      "name_vi": "Chú Sơn",
+      "role": "mentor",
+      "age": "~50",
+      "appears_in": "S0,S1,CS1,S2",
+      "function": "Branch senior; delivers the Guidebook; the desk you relay to.",
+      "expressions": "calm,wry,serious,proud",
+      "customer_id": null
+    },
+    {
+      "char_id": "me",
+      "name_vi": "Mẹ (Mother)",
+      "role": "boss",
+      "age": "~66",
+      "appears_in": "CS2,S3",
+      "function": "Stage-3 emotional core; her face is the wellbeing readout.",
+      "expressions": "12-expression spine",
+      "customer_id": null
+    },
+    {
+      "char_id": "thay_scammer",
+      "name_vi": "‘Thầy’ / scammer",
+      "role": "antagonist",
+      "age": "unknown",
+      "appears_in": "S2-C,S3",
+      "function": "Off-screen antagonist; silhouette + voice only.",
+      "expressions": "silhouette",
+      "customer_id": null
+    },
+    {
+      "char_id": "di_tu",
+      "name_vi": "Dì Tư",
+      "role": "ally",
+      "age": "~60",
+      "appears_in": "CS2,S3",
+      "function": "Mother’s sister; unlocks Day-actions; social proof.",
+      "expressions": "worried,warm,relieved",
+      "customer_id": null
+    },
+    {
+      "char_id": "su_thay",
+      "name_vi": "Sư thầy (real monk)",
+      "role": "authority",
+      "age": "~60",
+      "appears_in": "S3 (gated)",
+      "function": "Honest counter to the fake ‘thầy’, same spiritual register.",
+      "expressions": "calm,kind",
+      "customer_id": null
+    },
+    {
+      "char_id": "ba_hanh",
+      "name_vi": "Bà Hạnh",
+      "role": "customer",
+      "age": "68",
+      "appears_in": "S1,S2",
+      "function": "Retired teacher; fake-police victim (tutorial).",
+      "expressions": "neutral,worried,scared,urgent,hopeful,relieved,confused,sad",
+      "customer_id": "C1"
+    },
+    {
+      "char_id": "anh_tam",
+      "name_vi": "Anh Tâm",
+      "role": "customer",
+      "age": "35",
+      "appears_in": "S1",
+      "function": "Shop owner; GENUINE (cash to supplier).",
+      "expressions": "neutral,slightly_impatient,grateful,defensive",
+      "customer_id": "C2"
+    },
+    {
+      "char_id": "narrator",
+      "name_vi": "Người kể",
+      "role": "function",
+      "age": null,
+      "appears_in": "All",
+      "function": "Dẫn cảnh, không có chân dung.",
+      "expressions": null,
+      "customer_id": null
+    },
+    {
+      "char_id": "system",
+      "name_vi": "Hệ thống",
+      "role": "function",
+      "age": null,
+      "appears_in": "S1",
+      "function": "Thông báo hệ thống và chuyển cảnh.",
+      "expressions": null,
+      "customer_id": null
+    },
+    {
+      "char_id": "guidebook",
+      "name_vi": "Cẩm nang",
+      "role": "function",
+      "age": null,
+      "appears_in": "S0",
+      "function": "Lớp phủ cẩm nang 8 chiêu.",
+      "expressions": null,
+      "customer_id": null
+    }
+  ]
+}
